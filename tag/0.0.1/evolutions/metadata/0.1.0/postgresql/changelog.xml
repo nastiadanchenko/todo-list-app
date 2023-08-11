@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property
+            name="date_now"
+            value="now()"
+            dbms="postgresql"/>
+
+    <changeSet
+            id="todo-app_0.1.0"
+            author="whirl"
+            failOnError="true"
+            dbms="postgresql">
+
+        <sql>
+            insert into WHIRL_USER_GROUPS (R_WHIRL_USERS, GROUP_CODE)
+            values ((SELECT U.ID FROM WHIRL_USERS U WHERE U.LOGIN = 'whirl-admin'), 'todo-app')
+            on conflict DO nothing;
+        </sql>
+
+        <sql>
+            CREATE SCHEMA IF NOT EXISTS todo_app;
+        </sql>
+
+        <sqlFile path="tables/todo_list.sql"
+                 relativeToChangelogFile="true"/>
+
+        <rollback>
+            <delete tableName="WHIRL_USER_GROUPS">
+                <where>R_WHIRL_USERS = (SELECT U.ID FROM WHIRL_USERS U WHERE U.LOGIN = 'whirl-admin')</where>
+            </delete>
+
+            <sql>
+                DROP TABLE todo_app.todo_list;
+            </sql>
+
+            <sql>
+                DROP SCHEMA todo_app;
+            </sql>
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>

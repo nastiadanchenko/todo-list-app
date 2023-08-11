@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<application id="D32D3B68-4646-44B3-89C9-C815739707C6" name="todo-list-app" metaversion="1">
+  <properties>
+    <title replace="false">
+      <defaultLocale locale="ru"/>
+      <locales>
+        <value locale="ru" type="STRING"><![CDATA[todo-list-app]]></value>
+      </locales>
+    </title>
+    <code><![CDATA[todo-list-app]]></code>
+    <enabled>true</enabled>
+    <guest>false</guest>
+    <htmlHeader><![CDATA[]]></htmlHeader>
+  </properties>
+  <defaultLocale language="ru"/>
+  <locales/>
+  <references/>
+  <components>
+    <component id="5985D556-D4DB-493C-9E6A-985DBBDD2A28" name="BorderContainer" type="BorderContainerBuilder">
+      <properties>
+        <property name="LayoutData:MarginLeft" type="NUMBER" replace="false">
+          <defaultLocale locale="ru"/>
+          <locales>
+            <value locale="ru" type="NUMBER">3.0</value>
+          </locales>
+        </property>
+        <property name="Enabled" type="BOOLEAN" replace="false">
+          <defaultLocale locale="ru"/>
+          <locales>
+            <value locale="ru" type="BOOLEAN">true</value>
+          </locales>
+        </property>
+        <property name="LayoutData:Height" type="NUMBER" replace="false">
+          <defaultLocale locale="ru"/>
+          <locales>
+            <value locale="ru" type="NUMBER">1.0</value>
+          </locales>
+        </property>
+        <property name="LayoutData:MarginRight" type="NUMBER" replace="false">
+          <defaultLocale locale="ru"/>
+          <locales>
+            <value locale="ru" type="NUMBER">3.0</value>
+          </locales>
+        </property>
+        <property name="LayoutData:MarginBottom" type="NUMBER" replace="false">
+          <defaultLocale locale="ru"/>
+          <locales>
+            <value locale="ru" type="NUMBER">3.0</value>
+          </locales>
+        </property>
+        <property name="LayoutData:Width" type="NUMBER" replace="false">
+          <defaultLocale locale="ru"/>
+          <locales>
+            <value locale="ru" type="NUMBER">1.0</value>
+          </locales>
+        </property>
+        <property name="LayoutData:MarginTop" type="NUMBER" replace="false">
+          <defaultLocale locale="ru"/>
+          <locales>
+            <value locale="ru" type="NUMBER">3.0</value>
+          </locales>
+        </property>
+        <property name="Height" type="NUMBER" replace="false">
+          <defaultLocale locale="ru"/>
+          <locales>
+            <value locale="ru" type="NUMBER">1.0</value>
+          </locales>
+        </property>
+        <property name="Width" type="NUMBER" replace="false">
+          <defaultLocale locale="ru"/>
+          <locales>
+            <value locale="ru" type="NUMBER">1.0</value>
+          </locales>
+        </property>
+      </properties>
+    </component>
+  </components>
+  <datasources>
+    <datasource id="43E9974D-6E95-4C48-BBEB-902F27044642" name="metadata">
+      <alias>metadata</alias>
+      <databaseName>metadata</databaseName>
+      <schemas>
+        <schema id="D0CEF625-1CC2-4973-A5C1-606DE814109F" name="todo_app">
+          <schemaName>todo_app</schemaName>
+          <tables>
+            <table id="8E479F8A-EF66-420A-A94D-194561A35065" name="todo_list">
+              <title replace="false">
+                <defaultLocale locale="ru"/>
+                <locales>
+                  <value locale="ru" type="STRING"><![CDATA[todo_list]]></value>
+                </locales>
+              </title>
+              <emptyRow>false</emptyRow>
+              <tableName>todo_list</tableName>
+              <idColumnId>C73E70FD-3C92-474D-808E-467C16C842C3</idColumnId>
+              <code>todo_list</code>
+              <columns>
+                <column id="C73E70FD-3C92-474D-808E-467C16C842C3" name="Номер - id">
+                  <index>0</index>
+                  <title replace="false">
+                    <defaultLocale locale="ru"/>
+                    <locales>
+                      <value locale="ru" type="STRING"><![CDATA[Номер]]></value>
+                    </locales>
+                  </title>
+                  <columnName>id</columnName>
+                  <type><![CDATA[NUMBER]]></type>
+                  <width>100</width>
+                  <height>null</height>
+                  <size>null</size>
+                  <scale>null</scale>
+                  <defaultValue><![CDATA[]]></defaultValue>
+                  <notNull>false</notNull>
+                  <listTitle>false</listTitle>
+                  <hidden>false</hidden>
+                  <dataFormat></dataFormat>
+                  <color></color>
+                  <regex><![CDATA[]]></regex>
+                  <regexMessage replace="false">
+                    <defaultLocale locale="ru"/>
+                    <locales/>
+                  </regexMessage>
+                  <function><![CDATA[]]></function>
+                  <filter>true</filter>
+                  <defaultOrder>false</defaultOrder>
+                </column>
+                <column id="EDF861BC-923F-4403-81C5-AF4852A87F8C" name="Статус - status">
+                  <index>2</index>
+                  <title replace="false">
+                    <defaultLocale locale="ru"/>
+                    <locales>
+                      <value locale="ru" type="STRING"><![CDATA[Статус]]></value>
+                    </locales>
+                  </title>
+                  <columnName>status</columnName>
+                  <type><![CDATA[BOOLEAN]]></type>
+                  <width>54</width>
+                  <height>null</height>
+                  <size>null</size>
+                  <scale>null</scale>
+                  <defaultValue><![CDATA[FALSE]]></defaultValue>
+                  <notNull>true</notNull>
+                  <listTitle>false</listTitle>
+                  <hidden>false</hidden>
+                  <dataFormat></dataFormat>
+                  <color></color>
+                  <regex><![CDATA[]]></regex>
+                  <regexMessage replace="false">
+                    <defaultLocale locale="ru"/>
+                    <locales/>
+                  </regexMessage>
+                  <function><![CDATA[]]></function>
+                  <filter>true</filter>
+                  <defaultOrder>false</defaultOrder>
+                </column>
+                <column id="8088FFB9-A2C0-4DF6-9990-F675A4F2C89A" name="Содержимое - title">
+                  <index>1</index>
+                  <title replace="false">
+                    <defaultLocale locale="ru"/>
+                    <locales>
+                      <value locale="ru" type="STRING"><![CDATA[Содержимое]]></value>
+                    </locales>
+                  </title>
+                  <columnName>title</columnName>
+                  <type><![CDATA[STRING]]></type>
+                  <width>1840</width>
+                  <height>null</height>
+                  <size>null</size>
+                  <scale>null</scale>
+                  <defaultValue><![CDATA[]]></defaultValue>
+                  <notNull>true</notNull>
+                  <listTitle>false</listTitle>
+                  <hidden>false</hidden>
+                  <dataFormat></dataFormat>
+                  <color></color>
+                  <regex><![CDATA[]]></regex>
+                  <regexMessage replace="false">
+                    <defaultLocale locale="ru"/>
+                    <locales/>
+                  </regexMessage>
+                  <function><![CDATA[]]></function>
+                  <filter>true</filter>
+                  <defaultOrder>false</defaultOrder>
+                </column>
+              </columns>
+            </table>
+          </tables>
+        </schema>
+      </schemas>
+    </datasource>
+  </datasources>
+  <groups>
+    <group id="F38E2405-A637-4F8E-8664-56F4115D1FD2" name="Новая группа" groupName="new_group"/>
+  </groups>
+  <rights>
+    <tableRights/>
+    <tableColumnRights/>
+    <eventRights/>
+  </rights>
+</application>
